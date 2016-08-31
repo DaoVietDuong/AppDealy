@@ -1,0 +1,70 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a><img class="img-thumbnail img-responsive" alt="Bootstrap Image Preview" ng-src="{{target.thumbnail | formatUrl}}"
+                /></a>
+        </div>
+        <div class="panel-body">
+            <h5 class="text-center">{{target.name}}</h5>
+            <div class="text-center">{{target.point}} N coin | {{target.bonus_point}} T coin</div>
+            <div class="span7" ng-show="target.max != -1">Số lượng còn: {{target.max}}</div>
+            <div class="span7 " ng-show="target.max == -1">Số lượng không giới hạn</div>
+            <div class="span7 ">Địa điểm sử dụng: {{target.store_name}}</div>
+            <div class="span7">Địa chỉ: {{target.address_store}}</div>
+            <div class="span7" ng-show="dayLeft(target.ended_at) > 0">Thời gian kết thúc: {{target.ended_at}}</div>
+            <div class="span7" ng-show="dayLeft(target.ended_at) <= 0">Thời gian kết thúc: Hết hạn</div>
+            <hr>
+            <h5 class="text-center">Thông tin chi tiết</h5>
+            <p class="text-left" ng-bind-html="target.content"></p>
+
+        </div>
+
+        <div class="panel-footer" ng-show="clientService.isLogin() && dayLeft(target.ended_at) > 0">
+            <div class="row col-md-12">
+                <h5 class="text-center">Mua bằng</h5>
+            </div>
+            <div class="row" >
+                <div  style="width: 50%;float:left;text-align: center;">
+                    <input  type="radio" ng-model="target.point_type" id="_nCoin" aria-label="N coin" value="buy_point">
+                    <label  for="_nCoin">&nbsp;N coin</label>
+                </div>
+                <div  style="width: 50%;float:left;text-align: center;">
+                    <input  type="radio" id="_tCoin" ng-model="target.point_type" aria-label="T coin" value="bonus_point">
+                    <label  for="_tCoin">&nbsp;T coin</label>
+                </div>
+            </div>
+            <strong>Số lượng:</strong><input type="text" ng-model="quantity" class="form-control" />
+            <br>
+            <button type="button" class="btn btn-success center-block" ng-click="buy(target, quantity)">Mua</button>
+
+        </div>
+    </div>
+
+</div>
+<div ng-controller="commentController">
+    <div layout="row" layout-sm="column" layout-align="center center" layout-wrap flex>
+        <label>Bình luận:&nbsp</label>
+        <input type="text" ng-model="content" />
+
+        <!--<input type="text" class="form-control"  >-->
+        <md-button class="md-primary" ng-click="postComment()">Gửi</md-button>
+
+    </div>
+    <md-toolbar class="md-theme-light-green" style="margin-bottom: 10px;">
+        <h5 class="md-toolbar-tools">
+            <span>Bình luận</span>
+        </h5>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="item in data">
+                <a href="#" class="pull-left"><img alt="avatar" class="media-object" /></a>
+                <div class="md-list-item-text">
+                    <strong>{{item.commentatorable.name}}</strong> đã bình luận:
+                    <p>{{item.content}}</p>
+                </div>
+                <md-divider md-inset="" ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

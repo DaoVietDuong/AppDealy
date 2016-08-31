@@ -1,0 +1,22 @@
+<div ng-repeat="item in categories" ng-init="initItemCategory(item.slug)">
+    <p class="bg-primary">{{item.name}}</p>
+
+
+    <div ng-repeat="jtem in itemCategories[item.slug]" ng-if="$index < 4">
+            <div class="row" ng-if="$even">
+                <div class="col-xs-6">
+                    <a ui-sref="detailAddress({slugAddress: '{{itemCategories[item.slug][$index].slug}}', type:'dia-diem', storeId:'{{itemCategories[item.slug][$index].id}}'})"><img class="img-circle img-responsive" alt="Bootstrap Image Preview" ng-src="{{itemCategories[item.slug][$index].thumbnail | formatUrl}}"
+                        /></a>
+                    <h5>{{itemCategories[item.slug][$index].name}}</h5>
+                    <address><strong>Địa chỉ: </strong>{{itemCategories[item.slug][$index].address}}</address>
+                </div>
+                <div class="col-xs-6">
+                    <a ui-sref="detailAddress({slugAddress: '{{itemCategories[item.slug][$index+1].slug}}', type:'dia-diem', storeId:'{{itemCategories[item.slug][$index].id}}'})"><img class="img-circle img-responsive" alt="Bootstrap Image Preview" ng-src="{{itemCategories[item.slug][$index+1].thumbnail | formatUrl}}"
+                        /></a>
+                    <h5>{{itemCategories[item.slug][$index+1].name}}</h5>
+                    <address><strong>Địa chỉ: </strong>{{itemCategories[item.slug][$index+1].address}}</address>
+                </div>
+            </div>
+    </div>
+    <a ng-click="nextTo()">Xem thêm</a>
+</div>
