@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <!--CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap-3.3.6/dist/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css"></link>
+    <link rel="stylesheet" href="node_modules/angular-block-ui/dist/angular-block-ui.min.css"></link>
+    <link rel="stylesheet" href="css/nav-custom.css"></link>
+    <!--Library -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script src="js/ng-cordova-oauth.js"></script>
+    <script src="js/ng-cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="node_modules/angular-block-ui/dist/angular-block-ui.min.js"></script>
+    <script src="node_modules/bootstrap-3.3.6/dist/js/bootstrap.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/ng-resource/lib/angular-resource.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.min.js"></script>
+    <!-- Module -->
+    <script src="js/jsCommon.js"></script>
+    <script src="app/directives.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/filters.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/services/clientService.js"></script>
+    <script src="app/services/configService.js"></script>
+    <script src="app/filters/formatUrl.js"></script>
+    <script src="app/directives/backButtonDirective.js"></script>
+    <script src="app/modules/home/homeModule.js"></script>
+    <script src="app/modules/home/homeService.js"></script>
+
+    <script src="app/modules/home/controller/authenticationController.js"></script>
+    <script src="app/modules/home/controller/homeController.js"></script>
+    <script src="app/modules/home/controller/indexController.js"></script>
+    <script src="app/modules/home/controller/discountController.js"></script>
+    <script src="app/modules/home/controller/alertController.js"></script>
+    <script src="app/controller/commentController.js"></script>
+    <script src="app/app.js"></script>
+    <style>
+        #truncateLongTexts {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis ;
+}
+  /*.block-ui-message
+  {
+      position: fixed;
+      top: 50%;
+    transform: translateY(-50%);
+  }*/
+  #floatingCirclesG{
+	position:relative;
+	width:125px;
+	height:125px;
+	margin:auto;
+	transform:scale(0.6);
+		-o-transform:scale(0.6);
+		-ms-transform:scale(0.6);
+		-webkit-transform:scale(0.6);
+		-moz-transform:scale(0.6);
+}
+
+.f_circleG{
+	position:absolute;
+	background-color:rgb(255,255,255);
+	height:22px;
+	width:22px;
+	border-radius:12px;
+		-o-border-radius:12px;
+		-ms-border-radius:12px;
+		-webkit-border-radius:12px;
+		-moz-border-radius:12px;
+	animation-name:f_fadeG;
+		-o-animation-name:f_fadeG;
+		-ms-animation-name:f_fadeG;
+		-webkit-animation-name:f_fadeG;
+		-moz-animation-name:f_fadeG;
+	animation-duration:1.2s;
+		-o-animation-duration:1.2s;
+		-ms-animation-duration:1.2s;
+		-webkit-animation-duration:1.2s;
+		-moz-animation-duration:1.2s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+}
+
+#frotateG_01{
+	left:0;
+	top:51px;
+	animation-delay:0.45s;
+		-o-animation-delay:0.45s;
+		-ms-animation-delay:0.45s;
+		-webkit-animation-delay:0.45s;
+		-moz-animation-delay:0.45s;
+}
+
+#frotateG_02{
+	left:15px;
+	top:15px;
+	animation-delay:0.6s;
+		-o-animation-delay:0.6s;
+		-ms-animation-delay:0.6s;
+		-webkit-animation-delay:0.6s;
+		-moz-animation-delay:0.6s;
+}
+
+#frotateG_03{
+	left:51px;
+	top:0;
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
+}
+
+#frotateG_04{
+	right:15px;
+	top:15px;
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
+}
+
+#frotateG_05{
+	right:0;
+	top:51px;
+	animation-delay:1.05s;
+		-o-animation-delay:1.05s;
+		-ms-animation-delay:1.05s;
+		-webkit-animation-delay:1.05s;
+		-moz-animation-delay:1.05s;
+}
+
+#frotateG_06{
+	right:15px;
+	bottom:15px;
+	animation-delay:1.2s;
+		-o-animation-delay:1.2s;
+		-ms-animation-delay:1.2s;
+		-webkit-animation-delay:1.2s;
+		-moz-animation-delay:1.2s;
+}
+
+#frotateG_07{
+	left:51px;
+	bottom:0;
+	animation-delay:1.35s;
+		-o-animation-delay:1.35s;
+		-ms-animation-delay:1.35s;
+		-webkit-animation-delay:1.35s;
+		-moz-animation-delay:1.35s;
+}
+
+#frotateG_08{
+	left:15px;
+	bottom:15px;
+	animation-delay:1.5s;
+		-o-animation-delay:1.5s;
+		-ms-animation-delay:1.5s;
+		-webkit-animation-delay:1.5s;
+		-moz-animation-delay:1.5s;
+}
+
+
+
+@keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
+}
+    </style>
+    <title>Hello Dealy</title>
+</head>
+
+<body>
+    <div ng-app="mainApp" ng-cloak>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="authenticationController">
+            <div class="navbar-header" style="padding-top: 15px; height: 100%;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"  >
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <back ng-show="!isHome()"></back>
+                <a id="truncateLongTexts" class="navbar-brand" href="#">{{name}}</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li> 
+                        <a ui-sref="discount({type:'uu-dai'})">Mua ưu đãi</a>
+                    </li>
+                    <li ng-show="isLogin">
+                        <a  ui-sref="useDiscount({type:'uu-dai'})">Sử dụng ưu đãi</a>
+                    </li>
+                    <li ng-show="!isLogin">
+                        <a ui-sref="authentication">Đăng nhập</a>
+                    </li>
+                    <li ng-show="isLogin">
+                        <a ng-click="Logout()">Đăng xuất</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class="container-fluid"  block-ui="myBlockUI">
+            <div ng-controller="homeController">
+                <div class="row">
+                    <div class="form-group">
+
+                        <div class="col-xs-12">
+                            <select class="form-control" ng-model="target" ng-change="change()" ng-options="opt.slug as opt.name for opt in data.cities">
+                                <option value="">-</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <ui-view></ui-view>
+        </div>
+    </div>
+    <style>
+        body {
+            margin-top: 80px;
+        }
+    </style>
+
+    <script>
+        $('.nav a').on('click', function(){
+    $('.btn-navbar').click(); //bootstrap 2.x
+    $('.navbar-toggle').click() //bootstrap 3.x by Richard
+});
+
+    </script>
+</body>
+
+</html>

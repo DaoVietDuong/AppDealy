@@ -1,0 +1,20 @@
+
+    <div id="item-data" ng-repeat="item in data">
+            <div class="col-md-12">
+                    <a ui-sref="discountDetail({dealId: '{{item.id}}', type:'uu-dai', uuDaiSlug: '{{item.slug}}'})"><img class="img-circle img-responsive" alt="Bootstrap Image Preview" ng-src="{{data[$index].thumbnail | formatUrl}}"
+                        /></a>
+                    <h5 class="text-center">{{item.name}}</h5>
+                    <div class="span7 text-center"> {{item.point}} N coin</div>
+                    <div class="span7 text-center"> {{item.bonus_point}} T coin</div>
+                    <div class="span7" ng-show="item.max != -1">Số lượng còn: {{item.max}}</div>
+                    <div class="span7" ng-show="item.max == -1">Số lượng không giới hạn</div>
+                    <div class="span7">Địa điểm sử dụng: {{item.store_name}}</div>
+                    <div class="span7">Địa chỉ: {{item.address_store}}</div>
+                    <div class="span7">Thời gian kết thúc: {{item.ended_at}}</div>
+                    <!--<strong>Số lượng:</strong><input type="text"  ng-model="quantit[field]"  class="form-control"/>
+                    <button type="button" ng-show="clientService.isLogin()" class="btn btn-success center-block" ng-click="buy(item, quantit[field])">Mua</button>-->
+            </div>
+            <hr>
+    </div>
+    
+    
