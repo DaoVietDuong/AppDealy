@@ -10,18 +10,18 @@
                     <div class="span7">Địa điểm ưu đãi: {{item.store_name}}</div>
                     <div class="span7">Địa chỉ: {{item.address_store}}</div>
                     <div class="span7">Thời gian kết thúc: {{item.deal.ended_at}}</div>
-                    <div ng-if="myInfo.buy_point > 0" class="span7">Mua bằng: N coin</div>
-                     <div ng-if="myInfo.buy_point = 0" class="span7">Mua bằng: T coin</div>
+                    <div ng-show="myInfo.buy_point > 0" class="span7">Mua bằng: N coin</div>
+                     <div ng-show="myInfo.buy_point == 0" class="span7">Mua bằng: T coin</div>
                     <div ng-show="dayLeft(item.deal.ended_at) > 0 && (item.bought - item.used) > 0">
                     <strong>Số lượng:</strong><input type="text"  ng-model="quantity[field]"  class="form-control"/>
                     <button type="button" style="margin-top: 10px;" ng-show="clientService.isLogin()" class="btn btn-success center-block" ng-click="use(item, quantity[field])">Sử dụng</button>
                     </div>
-                    <div ng-show="(item.bought - item.used) <= 0">
-                        <p class="text-center">Tình trạng: <strong>Không thể sử dụng</strong></p>
+                    <div>
+                        <p class="text-center">Tình trạng: <strong ng-show="(item.bought - item.used) <= 0">Không thể sử dụng</strong> <strong ng-show="dayLeft(item.deal.ended_at) <= 0">Hết hạn sử dụng</strong></p>
                     </div>
-                    <div ng-show="dayLeft(item.deal.ended_at) <= 0">
-                        <p class="text-center">Tình trạng: <strong>Hết hạn sử dụng</strong></p>
-                    </div>
+                    <!--<div ng-show="dayLeft(item.deal.ended_at) <= 0">
+                        <p class="text-center">Tình trạng: <strong ng-show="dayLeft(item.deal.ended_at) <= 0">Hết hạn sử dụng</strong></p>
+                    </div>-->
             </div>
             <hr>
     </div>
