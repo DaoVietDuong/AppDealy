@@ -41,31 +41,6 @@
         <param name="APP_NAME" value="Dealy" />
     </gap:plugin>
     <icon src="icon.png" />
-    <icon gap:density="ldpi" gap:platform="android" src="www/res/icon/android/food_dining_icon.png" />
-    <icon gap:density="mdpi" gap:platform="android" src="www/res/icon/android/food_dining_icon.png" />
-    <icon gap:density="hdpi" gap:platform="android" src="www/res/icon/android/food_dining_icon.png" />
-    <icon gap:density="xhdpi" gap:platform="android" src="www/res/icon/android/food_dining_icon.png" />
-    <icon gap:density="xxhdpi" gap:platform="android" src="www/res/icon/android/food_dining_icon.png" />
-    <icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />
-    <icon gap:platform="blackberry" gap:state="hover" src="www/res/icon/blackberry/icon-80.png" />
-    <icon gap:platform="ios" height="57" src="www/res/icon/ios/icon-57.png" width="57" />
-    <icon gap:platform="ios" height="72" src="www/res/icon/ios/icon-72.png" width="72" />
-    <icon gap:platform="ios" height="114" src="www/res/icon/ios/icon-57-2x.png" width="114" />
-    <icon gap:platform="ios" height="144" src="www/res/icon/ios/icon-72-2x.png" width="144" />
-    <icon gap:platform="webos" src="www/res/icon/webos/icon-64.png" />
-    <icon gap:platform="winphone" src="www/res/icon/windows-phone/icon-48.png" />
-    <icon gap:platform="winphone" gap:role="background" src="www/res/icon/windows-phone/icon-173-tile.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/food_dining_icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/food_dining_icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/food_dining_icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/food_dining_icon.png" />
-    <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
-    <gap:splash gap:platform="ios" height="480" src="www/res/screen/ios/screen-iphone-portrait.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="www/res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
-    <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/screen-ipad-portrait.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -73,6 +48,24 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+    <splash density="land-ldpi" src="www/res/screen/android/350.png" />
+    <splash density="land-mdpi" src="www/res/screen/android/350.png" />
+    <splash density="land-hdpi" src="www/res/screen/android/350.png" />
+    <splash density="land-xhdpi" src="www/res/screen/android/350.png" />
+    <splash density="land-xxhdpi" src="www/res/screen/android/350.png" />
+    <splash density="land-xxxhdpi" src="www/res/screen/android/350.png" />
+    <splash density="port-ldpi" src="www/res/screen/android/350.png" />
+    <splash density="port-mdpi" src="www/res/screen/android/350.png" />
+    <splash density="port-hdpi" src="www/res/screen/android/350.png" />
+    <splash density="port-xhdpi" src="www/res/screen/android/350.png" />
+    <splash density="port-xxhdpi" src="www/res/screen/android/350.png" />
+    <splash density="port-xxxhdpi" src="www/res/screen/android/350.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="permissions" value="none" />
